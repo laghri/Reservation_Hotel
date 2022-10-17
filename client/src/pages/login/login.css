@@ -1,0 +1,36 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lInput{
+    height: 30px;
+    padding: 10px;
+}
+.lButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.lButton:disabled{
+    background-color: rgb(144, 144, 236);
+    cursor: not-allowed;
+}
