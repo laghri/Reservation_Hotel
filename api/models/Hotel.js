@@ -10,11 +10,11 @@ const HotelSchema =new mongoose.Schema ({
         type:String,
         required:true
       },
-      City:{
+      city:{
         type:String,
         required:true
       },
-      Address:{
+      address:{
         type:String,
         required:true
       },

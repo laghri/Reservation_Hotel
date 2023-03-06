@@ -8,8 +8,7 @@ export const register = async( req,res,next)=>{
         const salt =bcrypt.genSaltSync(10);
         const hash =bcrypt.hashSync(req.body.password,salt);
         const newUser =new Users({
-            username:req.body.username,
-            email:req.body.email,
+            ...req.body,  
             password:hash,
         });
         await newUser.save();
@@ -32,7 +31,7 @@ export const register = async( req,res,next)=>{
            const token =jwt.sign({id:user._id ,isAdmin:user.isAdmin}, process.env.JWT)
            const { password, isAdmin, ...otherDetails} =user._doc;
           res.cookie("access_token",token ,{httpOnly:true ,})
-           .status(200).send({...otherDetails})
+           .status(200).send({details:{...otherDetails},isAdmin})
   
         } catch (error) {
           next(error);
